@@ -8,9 +8,15 @@ import io.reactivex.Observable;
 
 
 public class WeatherApiProxy {
-    public static Observable<WeatherResponse> getWeather(String city ){
+
+
+    public static Observable<WeatherResponse> getWeather(String city) {
+        return getWeather(city, WeatherApi.METRIC, WeatherApi.English);
+    }
+
+    public static Observable<WeatherResponse> getWeather(String city, @WeatherApi.Units String units, @WeatherApi.Lang String lang) {
         final AppContext appContext = AppContext.getAppContext();
         final WeatherApi weatherApi = appContext.getWeatherApi();
-        return weatherApi.weather( BuildConfig.OPEN_WEATHER_MAP_API_VERSION, city, BuildConfig.OPEN_WEATHER_MAP_KEY);
+        return weatherApi.getWeather(BuildConfig.OPEN_WEATHER_MAP_API_VERSION, city, units, lang, BuildConfig.OPEN_WEATHER_MAP_KEY);
     }
 }

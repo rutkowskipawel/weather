@@ -24,16 +24,12 @@ public class DataMapper {
         weather.setDescription(description);
         weather.setPressure(weatherResponse.getMain().getPressure());
         weather.setHumidity(weatherResponse.getMain().getHumidity());
-        weather.setTemperature(transformToCelcius( weatherResponse.getMain().getTemperature() ));
+        weather.setTemperature(weatherResponse.getMain().getTemperature());
         weather.setLatitude(weatherResponse.getCoordinates().getLatitude());
         weather.setLongitude(weatherResponse.getCoordinates().getLongitude());
         weather.setTempMin(weatherResponse.getMain().getTempMin());
         weather.setTempMax(weatherResponse.getMain().getTempMax());
         weather.setTimestamp(weatherResponse.getDt());
 
-    }
-
-    private static Double transformToCelcius(Double temperatureKelvin) {
-        return Math.floor(temperatureKelvin - 273.15);
     }
 }
