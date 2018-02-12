@@ -1,9 +1,11 @@
-package com.example.prutko02.weatherapp;
+package com.example.prutko02.weatherapp.view;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class MainActivity extends AppCompatActivity {
+import com.example.prutko02.weatherapp.R;
+
+public class WeatherActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
