@@ -40,16 +40,6 @@ public class WeatherActivityVM {
     void onStart() {
     }
 
-    void onDestroy() {
-    }
-
-    void onPause() {
-        compositeDisposable.dispose();
-    }
-
-    void onStop() {
-    }
-
     void onResume() {
         if (!currentCity.get().isEmpty()) {
             compositeDisposable.add(
@@ -81,5 +71,16 @@ public class WeatherActivityVM {
                                 }
                             }));
         }
+    }
+
+
+    void onPause() {
+        compositeDisposable.dispose();
+    }
+
+    void onStop() {
+    }
+
+    void onDestroy() {
     }
 }
