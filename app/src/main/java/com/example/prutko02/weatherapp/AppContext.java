@@ -11,6 +11,10 @@ import com.example.prutko02.weatherapp.utils.LogUtil;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
+import java.security.PublicKey;
+
+import io.realm.Realm;
+import io.realm.RealmConfiguration;
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
@@ -35,6 +39,20 @@ public class AppContext extends Application {
 
     public static AppContext getAppContext() {
         return appContext;
+    }
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
+
+        //init Realm
+        Realm.init(this);
+
+        RealmConfiguration realmConfiguration = new RealmConfiguration.Builder()
+                .name("weatherDB.realm")
+                .schemaVersion(1L)
+                .build();
+        Realm.setDefaultConfiguration(realmConfiguration);
     }
 
     public static boolean isNetworkAvailable() {

@@ -4,8 +4,8 @@ import com.google.gson.annotations.SerializedName;
 
 public class Main {
     /** Temperature. Unit Default: Kelvin, Metric: Celsius, Imperial: Fahrenheit. **/
-    @SerializedName("tempretature")
-    private Double tempretature;
+    @SerializedName("temp")
+    private Double temperature;
     @SerializedName("pressure")
     private Integer pressure;
     @SerializedName("humidity")
@@ -15,8 +15,8 @@ public class Main {
     @SerializedName("temp_max")
     private Double tempMax;
 
-    public Double getTempretature() {
-        return tempretature;
+    public Double getTemperature() {
+        return temperature;
     }
 
     public Integer getPressure() {
@@ -37,7 +37,7 @@ public class Main {
 
     @Override
     public String toString() {
-        return "Main{" + "tempretature=" + tempretature +
+        return "Main{" + "temperature=" + temperature +
                 ", pressure=" + pressure +
                 ", humidity=" + humidity +
                 ", tempMin=" + tempMin +

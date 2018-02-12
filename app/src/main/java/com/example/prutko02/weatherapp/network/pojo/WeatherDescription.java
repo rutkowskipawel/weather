@@ -3,14 +3,14 @@ package com.example.prutko02.weatherapp.network.pojo;
 import com.google.gson.annotations.SerializedName;
 
 
-public class Weather {
+public class WeatherDescription {
     @SerializedName("id")
     private Integer id;
     @SerializedName("mainWeatherCondition")
     private String mainWeatherCondition;
     @SerializedName("description")
     private String description;
-    /** Weather icon id **/
+    /** WeatherDescription icon id **/
     @SerializedName("icon")
     private String icon;
 
@@ -20,7 +20,7 @@ public class Weather {
 
     /**
      *
-     * @return Weather parameters (Rain, Snow, Extreme etc.)
+     * @return WeatherDescription parameters (Rain, Snow, Extreme etc.)
      */
     public String getMainWeatherCondition() {
         return mainWeatherCondition;
@@ -36,7 +36,7 @@ public class Weather {
 
     @Override
     public String toString() {
-        return "Weather{" + "id=" + id +
+        return "WeatherDescription{" + "id=" + id +
                 ", mainWeatherCondition='" + mainWeatherCondition + '\'' +
                 ", description='" + description + '\'' +
                 ", icon='" + icon + '\'' +

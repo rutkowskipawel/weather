@@ -6,13 +6,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Mapping JSON with weather to POJO
+ * Mapping JSON with weatherDescription to POJO
  */
 public class WeatherResponse {
     @SerializedName("coord")
-    private Coordinates coord;
+    private Coordinates coordinates;
     @SerializedName("weather")
-    private List<Weather> weather = new ArrayList<>();
+    private List<WeatherDescription> weatherDescription = new ArrayList<>();
     //Internal parameter
     @SerializedName("base")
     private String base;
@@ -30,17 +30,17 @@ public class WeatherResponse {
     private Sys sys;
     @SerializedName("id")
     private Integer id;
-    @SerializedName("cityName")
+    @SerializedName("name")
     private String cityName;
     @SerializedName("cod")
     private Integer cod;
 
-    public Coordinates getCoord() {
-        return coord;
+    public Coordinates getCoordinates() {
+        return coordinates;
     }
 
-    public List<Weather> getWeather() {
-        return weather;
+    public List<WeatherDescription> getWeatherDescription() {
+        return weatherDescription;
     }
 
     public String getBase() {
@@ -83,8 +83,8 @@ public class WeatherResponse {
     @Override
     public String toString() {
         return "WeatherResponse{" +
-                "coord=" + coord +
-                ", weather=" + weather +
+                "coordinates=" + coordinates +
+                ", weatherDescription=" + weatherDescription +
                 ", base='" + base + '\'' +
                 ", main=" + main +
                 ", wind=" + wind +

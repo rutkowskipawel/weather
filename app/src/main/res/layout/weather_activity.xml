@@ -6,8 +6,8 @@
     <data>
 
         <variable
-            name="weatherResponse"
-            type="com.example.prutko02.weatherapp.network.pojo.WeatherResponse" />
+            name="viewModel"
+            type="com.example.prutko02.weatherapp.view.WeatherActivityVM" />
     </data>
 
 
@@ -49,7 +49,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
                     android:gravity="center"
-                    android:text="@{weatherResponse.cityName}"
+                    android:text="@{viewModel.weather.cityName}"
                     android:textSize="30sp"
                     tools:text="Warsaw" />
 
@@ -59,7 +59,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    android:text="@{weatherResponse.weather.get(0).description}"
+                    android:text="@{viewModel.weather.description}"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     tools:text="light intensity drizzle" />
 
@@ -69,7 +69,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    android:text="@{weatherResponse.main.tempretature.toString()}"
+                    android:text="@{viewModel.weather.temperature.toString()}"
                     android:textSize="24sp"
                     tools:text="25 	&#8451;" />
 
@@ -93,14 +93,14 @@
                 android:id="@+id/pressure_layout"
                 layout="@layout/single_parameter_info"
                 app:label="@{@string/pressure}"
-                app:value="@{weatherResponse.main.pressure.toString()}" />
+                app:value="@{viewModel.weather.pressure.toString()}" />
 
             <!-- Humidity -->
             <include
                 android:id="@+id/humidity_layout"
                 layout="@layout/single_parameter_info"
                 app:label="@{@string/humidity}"
-                app:value="@{weatherResponse.main.humidity.toString()}" />
+                app:value="@{viewModel.weather.humidity.toString()}" />
 
 
             <!-- Longitude -->
@@ -108,7 +108,7 @@
                 android:id="@+id/longitude_layout"
                 layout="@layout/single_parameter_info"
                 app:label="@{@string/longitude}"
-                app:value="@{weatherResponse.coord.longitude.toString()}" />
+                app:value="@{viewModel.weather.longitude.toString()}" />
 
 
             <!-- Latitude -->
@@ -116,7 +116,7 @@
                 android:id="@+id/latitue_layout"
                 layout="@layout/single_parameter_info"
                 app:label="@{@string/latitude}"
-                app:value="@{weatherResponse.coord.latitude.toString()}" />
+                app:value="@{viewModel.weather.latitude.toString()}" />
         </LinearLayout>
     </LinearLayout>
 

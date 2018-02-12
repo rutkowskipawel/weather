@@ -6,21 +6,46 @@ import android.support.v7.app.AppCompatActivity;
 
 import com.example.prutko02.weatherapp.R;
 import com.example.prutko02.weatherapp.databinding.WeatherActivityBinding;
-import com.example.prutko02.weatherapp.network.pojo.WeatherResponse;
-
-import io.reactivex.disposables.CompositeDisposable;
 
 public class WeatherActivity extends AppCompatActivity {
-
-    CompositeDisposable compositeDisposable = new CompositeDisposable();
+    private WeatherActivityVM weatherActivityVM;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         WeatherActivityBinding binding = DataBindingUtil.setContentView(this, R.layout.weather_activity);
-        WeatherResponse weatherResponse = new WeatherResponse();
-        binding.setWeatherResponse(weatherResponse);
+        weatherActivityVM = new WeatherActivityVM();
+        binding.setViewModel(weatherActivityVM);
+        weatherActivityVM.onPostCreate();
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        weatherActivityVM.onResume();
+    }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        weatherActivityVM.onStart();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        weatherActivityVM.onPause();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        weatherActivityVM.onStop();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        weatherActivityVM.onDestroy();
+    }
 }
