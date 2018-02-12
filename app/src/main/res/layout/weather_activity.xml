@@ -69,9 +69,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    android:text="@{viewModel.weather.temperature.toString()}"
+                    android:text='@{viewModel.weather.temperature.toString() + " C"}'
                     android:textSize="24sp"
-                    tools:text="25 	&#8451;" />
+                    tools:text="2;" />
 
             </LinearLayout>
 
@@ -93,14 +93,14 @@
                 android:id="@+id/pressure_layout"
                 layout="@layout/single_parameter_info"
                 app:label="@{@string/pressure}"
-                app:value="@{viewModel.weather.pressure.toString()}" />
+                app:value='@{viewModel.weather.pressure.toString() + "hpa"}'/>
 
             <!-- Humidity -->
             <include
                 android:id="@+id/humidity_layout"
                 layout="@layout/single_parameter_info"
                 app:label="@{@string/humidity}"
-                app:value="@{viewModel.weather.humidity.toString()}" />
+                app:value='@{viewModel.weather.humidity.toString() +  "%"}'/>
 
 
             <!-- Longitude -->
@@ -108,7 +108,7 @@
                 android:id="@+id/longitude_layout"
                 layout="@layout/single_parameter_info"
                 app:label="@{@string/longitude}"
-                app:value="@{viewModel.weather.longitude.toString()}" />
+                app:value="@{viewModel.weather.longitude.toString()}"       />
 
 
             <!-- Latitude -->

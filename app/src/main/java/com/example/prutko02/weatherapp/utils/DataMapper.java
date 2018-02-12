@@ -11,25 +11,26 @@ public class DataMapper {
 
     private static final String TAG = DataMapper.class.getSimpleName();
 
-    public static void transformWeatherResponseToWeather(WeatherResponse weatherResponse, Weather weather) {
+    public static  void transformWeatherResponseToWeather(WeatherResponse weatherResponse, Weather weather) {
         LogUtil.log(Log.VERBOSE, TAG, weatherResponse.toString());
+
         String description = "";
         List<WeatherDescription> weatherDescriptionList =  weatherResponse.getWeatherDescription();
         if(weatherDescriptionList.size()>0){
             description = weatherDescriptionList.get(0).getDescription();
         }
 
-        weather.setCityName(weatherResponse.getCityName());
         weather.setCountryCode(weatherResponse.getSys().getCountry());
         weather.setDescription(description);
         weather.setPressure(weatherResponse.getMain().getPressure());
         weather.setHumidity(weatherResponse.getMain().getHumidity());
-        final Double temperatureKelvin = weatherResponse.getMain().getTemperature();
-        final Double temperatureCelcius =  DataMapper.transformToCelcius(temperatureKelvin);
-        weather.setTemperature(temperatureCelcius);
+        weather.setTemperature(transformToCelcius( weatherResponse.getMain().getTemperature() ));
         weather.setLatitude(weatherResponse.getCoordinates().getLatitude());
         weather.setLongitude(weatherResponse.getCoordinates().getLongitude());
+        weather.setTempMin(weatherResponse.getMain().getTempMin());
+        weather.setTempMax(weatherResponse.getMain().getTempMax());
         weather.setTimestamp(weatherResponse.getDt());
+
     }
 
     private static Double transformToCelcius(Double temperatureKelvin) {

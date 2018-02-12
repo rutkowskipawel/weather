@@ -1,11 +1,13 @@
 package com.example.prutko02.weatherapp.model;
 
 import io.realm.RealmObject;
+import io.realm.annotations.PrimaryKey;
 import io.realm.annotations.Required;
 
 public class Weather extends RealmObject {
 
     private String countryCode;
+    @PrimaryKey
     private String cityName;
     private Double temperature;
     private String description;
@@ -24,7 +26,9 @@ public class Weather extends RealmObject {
     @Required
     private Integer timestamp;
 
-    public Weather(){}
+    public Weather() {
+    }
+
 
     Weather(String countryCode, String cityName, Double temperature, String description, Integer pressure, Integer humidity, Double tempMin, Double tempMax, Double longitude, Double latitude, Integer timestamp) {
         this.countryCode = countryCode;
@@ -157,11 +161,6 @@ public class Weather extends RealmObject {
     public void setCountryCode(String countryCode) {
         this.countryCode = countryCode;
     }
-
-    public void setCityName(String cityName) {
-        this.cityName = cityName;
-    }
-
     public void setTemperature(Double temperature) {
         this.temperature = temperature;
     }

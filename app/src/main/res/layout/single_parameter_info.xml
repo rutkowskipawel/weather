@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<layout  xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
+
     <data>
+
         <variable
             name="label"
             type="String" />
@@ -24,7 +26,7 @@
             android:layout_height="wrap_content"
             android:text="@{label}"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            tools:text="@string/pressure"/>
+            tools:text="@string/pressure" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -34,6 +36,6 @@
             android:paddingStart="10dp"
             android:text="@{value}"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            tools:text="1012"/>
+            tools:text="1012" />
     </LinearLayout>
 </layout>
