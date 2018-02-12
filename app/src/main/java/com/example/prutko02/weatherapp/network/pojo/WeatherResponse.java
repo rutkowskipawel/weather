@@ -30,8 +30,8 @@ public class WeatherResponse {
     private Sys sys;
     @SerializedName("id")
     private Integer id;
-    @SerializedName("name")
-    private String name;
+    @SerializedName("cityName")
+    private String cityName;
     @SerializedName("cod")
     private Integer cod;
 
@@ -71,8 +71,8 @@ public class WeatherResponse {
         return id;
     }
 
-    public String getName() {
-        return name;
+    public String getCityName() {
+        return cityName;
     }
 
     public Integer getCod() {
@@ -92,7 +92,7 @@ public class WeatherResponse {
                 ", dt=" + dt +
                 ", sys=" + sys +
                 ", id=" + id +
-                ", name='" + name + '\'' +
+                ", cityName='" + cityName + '\'' +
                 ", cod=" + cod +
                 '}';
     }

@@ -1,1 +1,7 @@
-Ideas
+Create lancher icon
+Index by Google search
+I18n
+Realm
+Repository
+Service refreshing data
+Unit tests
