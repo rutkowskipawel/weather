@@ -4,4 +4,6 @@
     <string name="humidity">Humidity:</string>
     <string name="latitude">Latitude</string>
     <string name="longitude">Longitude</string>
+    <string name="title_city_list">Cities</string>
+    <string name="title_city_detail">City Detail</string>
 </resources>

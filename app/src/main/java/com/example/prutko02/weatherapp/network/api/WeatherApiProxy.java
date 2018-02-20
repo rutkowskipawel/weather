@@ -9,7 +9,6 @@ import io.reactivex.Observable;
 
 public class WeatherApiProxy {
 
-
     public static Observable<WeatherResponse> getWeather(String city) {
         return getWeather(city, WeatherApi.METRIC, WeatherApi.English);
     }
